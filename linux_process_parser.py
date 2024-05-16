@@ -44,19 +44,19 @@ def get_system_info():
         except ValueError:
             pass
 
-    report = f"Отчёт о состоянии системы:\n"
-    report += f"Пользователи системы: {', '.join(users)}\n"
-    report += f"Процессов запущено: {total_processes}\n\n"
+    report = f"РћС‚С‡С‘С‚ Рѕ СЃРѕСЃС‚РѕСЏРЅРёРё СЃРёСЃС‚РµРјС‹:\n"
+    report += f"РџРѕР»СЊР·РѕРІР°С‚РµР»Рё СЃРёСЃС‚РµРјС‹: {', '.join(users)}\n"
+    report += f"РџСЂРѕС†РµСЃСЃРѕРІ Р·Р°РїСѓС‰РµРЅРѕ: {total_processes}\n\n"
 
-    report += f"Пользовательских процессов:\n"
+    report += f"РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёС… РїСЂРѕС†РµСЃСЃРѕРІ:\n"
     for user_name, count in process_counts.items():
         report += f"{user_name}: {count}\n"
     report += "\n"
 
-    report += f"Всего памяти используется: {total_memory_used / total_processes:.1f}%\n"
-    report += f"Всего CPU используется: {total_cpu_usage / total_processes:.1f}%\n"
-    report += f"Больше всего памяти использует: {top_memory_process} ({max_memory:.1f}%)\n"
-    report += f"Больше всего CPU использует: {top_cpu_process} ({max_cpu:.1f}%)\n"
+    report += f"Р’СЃРµРіРѕ РїР°РјСЏС‚Рё РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ: {total_memory_used / total_processes:.1f}%\n"
+    report += f"Р’СЃРµРіРѕ CPU РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ: {total_cpu_usage / total_processes:.1f}%\n"
+    report += f"Р‘РѕР»СЊС€Рµ РІСЃРµРіРѕ РїР°РјСЏС‚Рё РёСЃРїРѕР»СЊР·СѓРµС‚: {top_memory_process} ({max_memory:.1f}%)\n"
+    report += f"Р‘РѕР»СЊС€Рµ РІСЃРµРіРѕ CPU РёСЃРїРѕР»СЊР·СѓРµС‚: {top_cpu_process} ({max_cpu:.1f}%)\n"
 
     print(report)
 
